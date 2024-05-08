@@ -92,16 +92,26 @@ const Index = () => {
           <VStack flex="1" borderWidth="1px" borderRadius="lg" p={4} spacing={4} ml={{ md: 4 }}>
             <Heading size="md">Boosters!</Heading>
             <Flex direction="column" spacing={4} justifyContent="flex-end">
-              <IconButton aria-label="Motivation" icon={<FaRegLightbulb />} size="lg" />
-              <Text>Motivation</Text>
-              <IconButton aria-label="Effective Resting" icon={<FaMoon />} size="lg" />
-              <Text>Effective Resting</Text>
-              <IconButton aria-label="Back-To-Work" icon={<FaRegCalendarPlus />} size="lg" />
-              <Text>Back-To-Work</Text>
-              <IconButton aria-label="Brainstorming" icon={<FaBolt />} size="lg" />
-              <Text>Brainstorming</Text>
-              <IconButton aria-label="Energy" icon={<FaSun />} size="lg" />
-              <Text>Energy</Text>
+              <VStack>
+                <Text>Motivation</Text>
+                <IconButton aria-label="Motivation" icon={<FaRegLightbulb />} size="lg" />
+              </VStack>
+              <VStack>
+                <Text>Effective Resting</Text>
+                <IconButton aria-label="Effective Resting" icon={<FaMoon />} size="lg" />
+              </VStack>
+              <VStack>
+                <Text>Back-To-Work</Text>
+                <IconButton aria-label="Back-To-Work" icon={<FaRegCalendarPlus />} size="lg" />
+              </VStack>
+              <VStack>
+                <Text>Brainstorming</Text>
+                <IconButton aria-label="Brainstorming" icon={<FaBolt />} size="lg" />
+              </VStack>
+              <VStack>
+                <Text>Energy</Text>
+                <IconButton aria-label="Energy" icon={<FaSun />} size="lg" />
+              </VStack>
             </Flex>
           </VStack>
         </Flex>

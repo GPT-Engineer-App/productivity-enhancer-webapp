@@ -54,28 +54,37 @@ const Index = () => {
             <Heading size="md">MODS</Heading>
             <Flex w="full">
               <Box flex="1" p={4} borderWidth="1px" borderRadius="lg">
-                <IconButton aria-label="Calm" icon={<FaRegSmileBeam />} />
+                <IconButton aria-label="Calm" icon={<FaRegSmileBeam />} size="lg" />
                 <Text>CALM</Text>
               </Box>
               <Box flex="1" p={4} borderWidth="1px" borderRadius="lg" ml={4}>
-                <IconButton aria-label="Focus" icon={<FaRegLightbulb />} />
+                <IconButton aria-label="Focus" icon={<FaRegLightbulb />} size="lg" />
                 <Text>FOCUS</Text>
               </Box>
-            </Flex>
-            <Flex w="full">
-              <Box flex="1" p={4} borderWidth="1px" borderRadius="lg">
-                <IconButton aria-label="Challenger" icon={<FaBolt />} />
+              <Box flex="1" p={4} borderWidth="1px" borderRadius="lg" ml={4}>
+                <IconButton aria-label="Challenger" icon={<FaBolt />} size="lg" />
                 <Text>CHALLENGER</Text>
               </Box>
               <Box flex="1" p={4} borderWidth="1px" borderRadius="lg" ml={4}>
-                <IconButton aria-label="Wise" icon={<FaBookOpen />} />
+                <IconButton aria-label="Wise" icon={<FaBookOpen />} size="lg" />
                 <Text>WISE</Text>
               </Box>
             </Flex>
           </VStack>
           <VStack flex="1" borderWidth="1px" borderRadius="lg" p={4} spacing={4} ml={{ md: 4 }}>
             <Heading size="md">Boosters!</Heading>
-            <Text mt={2}>Motivational content, back-to-work tools, and focus mode advice.</Text>
+            <Flex direction="column" spacing={4}>
+              <IconButton aria-label="Motivation" icon={<FaRegLightbulb />} size="lg" />
+              <Text>Motivation</Text>
+              <IconButton aria-label="Effective Resting" icon={<FaMoon />} size="lg" />
+              <Text>Effective Resting</Text>
+              <IconButton aria-label="Back-To-Work" icon={<FaRegCalendarPlus />} size="lg" />
+              <Text>Back-To-Work</Text>
+              <IconButton aria-label="Brainstorming" icon={<FaBolt />} size="lg" />
+              <Text>Brainstorming</Text>
+              <IconButton aria-label="Energy" icon={<FaSun />} size="lg" />
+              <Text>Energy</Text>
+            </Flex>
           </VStack>
         </Flex>
         <Flex direction={{ base: "column", md: "row" }} w="full" mt={4}>

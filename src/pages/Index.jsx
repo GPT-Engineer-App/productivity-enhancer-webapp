@@ -54,17 +54,21 @@ const Index = () => {
             <Heading size="md">MODS</Heading>
             <Flex w="full">
               <Box flex="1" p={4} borderWidth="1px" borderRadius="lg">
+                <IconButton aria-label="Calm" icon={<FaRegSmileBeam />} />
                 <Text>CALM</Text>
               </Box>
               <Box flex="1" p={4} borderWidth="1px" borderRadius="lg" ml={4}>
+                <IconButton aria-label="Focus" icon={<FaRegLightbulb />} />
                 <Text>FOCUS</Text>
               </Box>
             </Flex>
             <Flex w="full">
               <Box flex="1" p={4} borderWidth="1px" borderRadius="lg">
+                <IconButton aria-label="Challenger" icon={<FaBolt />} />
                 <Text>CHALLENGER</Text>
               </Box>
               <Box flex="1" p={4} borderWidth="1px" borderRadius="lg" ml={4}>
+                <IconButton aria-label="Wise" icon={<FaBookOpen />} />
                 <Text>WISE</Text>
               </Box>
             </Flex>

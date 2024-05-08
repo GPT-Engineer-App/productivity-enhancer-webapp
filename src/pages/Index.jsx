@@ -23,27 +23,27 @@ const Index = () => {
               <TabList>
                 <Tab>
                   <FaWater />
-                  <Text>Hydration reminder</Text>
+                  <Text>Hydration</Text>
                 </Tab>
                 <Tab>
                   <FaRunning />
-                  <Text>Physical activity reminder</Text>
+                  <Text>Physical Activity</Text>
                 </Tab>
                 <Tab>
                   <FaEye />
-                  <Text>Resting eyes reminder</Text>
+                  <Text>Eye Rest</Text>
                 </Tab>
                 <Tab>
                   <FaWind />
-                  <Text>Fresh air!</Text>
+                  <Text>Breathing</Text>
                 </Tab>
                 <Tab>
                   <FaVolumeUp />
-                  <Text>Check environmental sounds. If they're loud use music or grey/white sounds.</Text>
+                  <Text>Sounds</Text>
                 </Tab>
                 <Tab>
                   <FaLightbulb />
-                  <Text>Is your lighting okay?</Text>
+                  <Text>Lights</Text>
                 </Tab>
               </TabList>
               <TabPanels>
@@ -91,7 +91,7 @@ const Index = () => {
           </VStack>
           <VStack flex="1" borderWidth="1px" borderRadius="lg" p={4} spacing={4} ml={{ md: 4 }}>
             <Heading size="md">Boosters!</Heading>
-            <Flex direction="column" spacing={4}>
+            <Flex direction="column" spacing={4} justifyContent="flex-end">
               <IconButton aria-label="Motivation" icon={<FaRegLightbulb />} size="lg" />
               <Text>Motivation</Text>
               <IconButton aria-label="Effective Resting" icon={<FaMoon />} size="lg" />

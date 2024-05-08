@@ -1,5 +1,5 @@
-import { Box, Container, Flex, Heading, IconButton, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, useColorMode, VStack } from "@chakra-ui/react";
-import { FaMoon, FaSun, FaWater, FaBrain, FaBolt, FaBookOpen, FaRegLightbulb, FaRegSmileBeam } from "react-icons/fa";
+import { Box, Container, Flex, Heading, IconButton, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack, useColorMode } from "@chakra-ui/react";
+import { FaMoon, FaSun, FaWater, FaBrain, FaBolt, FaBookOpen, FaRegLightbulb, FaRegSmileBeam, FaRegCalendarPlus, FaRegListAlt } from "react-icons/fa";
 
 const Index = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -16,56 +16,78 @@ const Index = () => {
         <Text fontSize="lg" textAlign="center">
           Start your day with focus and positivity! Let's prepare for a productive day.
         </Text>
-        <Tabs isFitted variant="enclosed">
-          <TabList mb="1em">
-            <Tab>
-              <FaWater /> Hydration
-            </Tab>
-            <Tab>
-              <FaBrain /> Focus
-            </Tab>
-            <Tab>
-              <FaBolt /> Energy
-            </Tab>
-            <Tab>
-              <FaRegLightbulb /> Wisdom
-            </Tab>
-          </TabList>
-          <TabPanels>
-            <TabPanel>
-              <Text>Remember to drink water every hour to stay hydrated and maintain energy levels.</Text>
-            </TabPanel>
-            <TabPanel>
-              <Text>Practice mindfulness and use concentration techniques to enhance your focus.</Text>
-            </TabPanel>
-            <TabPanel>
-              <Text>Take short breaks and engage in physical activity to boost your energy.</Text>
-            </TabPanel>
-            <TabPanel>
-              <Text>Read daily to expand your knowledge and improve decision-making skills.</Text>
-            </TabPanel>
-          </TabPanels>
-        </Tabs>
-        <Flex direction={{ base: "column", md: "row" }} w="full">
+        <Flex direction={{ base: "column", md: "row" }} w="full" mt={4}>
+          <VStack flex="1" borderWidth="1px" borderRadius="lg" p={4} spacing={4}>
+            <Heading size="md">Reminders</Heading>
+            <Tabs variant="soft-rounded" colorScheme="blue">
+              <TabList>
+                <Tab>
+                  <FaWater />
+                </Tab>
+                <Tab>
+                  <FaBrain />
+                </Tab>
+                <Tab>
+                  <FaBolt />
+                </Tab>
+                <Tab>
+                  <FaRegLightbulb />
+                </Tab>
+              </TabList>
+              <TabPanels>
+                <TabPanel>
+                  <Text>Drink water every hour.</Text>
+                </TabPanel>
+                <TabPanel>
+                  <Text>Mindfulness and concentration exercises.</Text>
+                </TabPanel>
+                <TabPanel>
+                  <Text>Short physical activity breaks.</Text>
+                </TabPanel>
+                <TabPanel>
+                  <Text>Read to expand knowledge.</Text>
+                </TabPanel>
+              </TabPanels>
+            </Tabs>
+          </VStack>
+          <VStack flex="2" borderWidth="1px" borderRadius="lg" p={4} spacing={4} ml={{ md: 4 }}>
+            <Heading size="md">MODS</Heading>
+            <Flex w="full">
+              <Box flex="1" p={4} borderWidth="1px" borderRadius="lg">
+                <Text>CALM</Text>
+              </Box>
+              <Box flex="1" p={4} borderWidth="1px" borderRadius="lg" ml={4}>
+                <Text>FOCUS</Text>
+              </Box>
+            </Flex>
+            <Flex w="full">
+              <Box flex="1" p={4} borderWidth="1px" borderRadius="lg">
+                <Text>CHALLENGER</Text>
+              </Box>
+              <Box flex="1" p={4} borderWidth="1px" borderRadius="lg" ml={4}>
+                <Text>WISE</Text>
+              </Box>
+            </Flex>
+          </VStack>
+          <VStack flex="1" borderWidth="1px" borderRadius="lg" p={4} spacing={4} ml={{ md: 4 }}>
+            <Heading size="md">Boosters!</Heading>
+            <Text mt={2}>Motivational content, back-to-work tools, and focus mode advice.</Text>
+          </VStack>
+        </Flex>
+        <Flex direction={{ base: "column", md: "row" }} w="full" mt={4}>
           <Box flex="1" p={4} borderWidth="1px" borderRadius="lg">
             <Heading size="md">Work Assistant</Heading>
-            <Text mt={2}>Tips and techniques for efficient work and time management.</Text>
+            <Text mt={2}>Tips for efficient work and time management.</Text>
           </Box>
           <Box flex="1" p={4} borderWidth="1px" borderRadius="lg" ml={{ md: 4 }}>
             <Heading size="md">Learning Management</Heading>
-            <Text mt={2}>Access courses and materials for your personal and professional development.</Text>
+            <Text mt={2}>Courses and materials for development.</Text>
+          </Box>
+          <Box flex="1" p={4} borderWidth="1px" borderRadius="lg" ml={{ md: 4 }}>
+            <Heading size="md">Health Tips</Heading>
+            <Text mt={2}>Manage caffeine intake and maintain productivity.</Text>
           </Box>
         </Flex>
-        <Stack direction={{ base: "column", md: "row" }} spacing={4} w="full">
-          <Box flex="1" p={4} borderWidth="1px" borderRadius="lg">
-            <Heading size="md">Boosters!</Heading>
-            <Text mt={2}>Motivational content and tools to help you adapt back to work after holidays.</Text>
-          </Box>
-          <Box flex="1" p={4} borderWidth="1px" borderRadius="lg">
-            <Heading size="md">Health Tips</Heading>
-            <Text mt={2}>Practical advice on managing caffeine intake and maintaining productivity.</Text>
-          </Box>
-        </Stack>
         <Flex justifyContent="center" w="full">
           <Box p={4} borderWidth="1px" borderRadius="lg">
             <Heading size="md">Inspiration Blog</Heading>

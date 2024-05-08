@@ -1,5 +1,5 @@
 import { Box, Container, Flex, Heading, IconButton, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack, useColorMode } from "@chakra-ui/react";
-import { FaMoon, FaSun, FaWater, FaBrain, FaBolt, FaBookOpen, FaRegLightbulb, FaRegSmileBeam, FaRegCalendarPlus, FaRegListAlt } from "react-icons/fa";
+import { FaMoon, FaSun, FaWater, FaRunning, FaEye, FaWind, FaVolumeUp, FaLightbulb, FaBrain, FaBolt, FaBookOpen, FaRegLightbulb, FaRegSmileBeam, FaRegCalendarPlus, FaRegListAlt } from "react-icons/fa";
 
 const Index = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -19,33 +19,51 @@ const Index = () => {
         <Flex direction={{ base: "column", md: "row" }} w="full" mt={4}>
           <VStack flex="1" borderWidth="1px" borderRadius="lg" p={4} spacing={4}>
             <Heading size="md">Reminders</Heading>
-            <Tabs variant="soft-rounded" colorScheme="blue">
+            <Tabs variant="soft-rounded" colorScheme="blue" orientation="vertical" align="start">
               <TabList>
                 <Tab>
                   <FaWater />
+                  <Text>Hydration reminder</Text>
                 </Tab>
                 <Tab>
-                  <FaBrain />
+                  <FaRunning />
+                  <Text>Physical activity reminder</Text>
                 </Tab>
                 <Tab>
-                  <FaBolt />
+                  <FaEye />
+                  <Text>Resting eyes reminder</Text>
                 </Tab>
                 <Tab>
-                  <FaRegLightbulb />
+                  <FaWind />
+                  <Text>Fresh air!</Text>
+                </Tab>
+                <Tab>
+                  <FaVolumeUp />
+                  <Text>Check environmental sounds. If they're loud use music or grey/white sounds.</Text>
+                </Tab>
+                <Tab>
+                  <FaLightbulb />
+                  <Text>Is your lighting okay?</Text>
                 </Tab>
               </TabList>
               <TabPanels>
                 <TabPanel>
-                  <Text>Drink water every hour.</Text>
+                  <Text>Remember to drink water regularly to stay hydrated.</Text>
                 </TabPanel>
                 <TabPanel>
-                  <Text>Mindfulness and concentration exercises.</Text>
+                  <Text>Take breaks for some physical activity to keep your body active.</Text>
                 </TabPanel>
                 <TabPanel>
-                  <Text>Short physical activity breaks.</Text>
+                  <Text>Rest your eyes periodically, especially if you're looking at screens for a long time.</Text>
                 </TabPanel>
                 <TabPanel>
-                  <Text>Read to expand knowledge.</Text>
+                  <Text>Ensure you're getting fresh air to maintain a healthy environment.</Text>
+                </TabPanel>
+                <TabPanel>
+                  <Text>Monitor the noise levels in your environment. Use soothing sounds if necessary.</Text>
+                </TabPanel>
+                <TabPanel>
+                  <Text>Check your workspace lighting to ensure it's adequate and comfortable for your eyes.</Text>
                 </TabPanel>
               </TabPanels>
             </Tabs>

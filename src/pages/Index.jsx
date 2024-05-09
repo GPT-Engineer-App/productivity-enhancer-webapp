@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Box, Button, Container, Flex, Heading, IconButton, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack, useColorMode, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, useDisclosure, Input } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { FaMoon, FaSun, FaWater, FaRunning, FaEye, FaWind, FaVolumeUp, FaLightbulb, FaBrain, FaBolt, FaBookOpen, FaRegLightbulb, FaRegSmileBeam, FaRegCalendarPlus, FaRegListAlt } from "react-icons/fa";
@@ -164,7 +164,15 @@ const Index = () => {
           <ModalCloseButton />
           <ModalBody>
             <Text>{chatResponse}</Text>
-            <Input placeholder="Type your message here..." value={userInput} onChange={(e) => handleUserInput(e.target.value)} mt={4} />
+            <VStack spacing={4}>
+              <Box w="full" p={3} overflowY="auto" maxH="300px" borderWidth="1px" borderRadius="lg">
+                <Text>{chatResponse}</Text>
+              </Box>
+              <Input placeholder="Type your message here..." value={userInput} onChange={(e) => handleUserInput(e.target.value)} />
+              <Button colorScheme="blue" onClick={() => handleUserInput(userInput)}>
+                Send
+              </Button>
+            </VStack>
           </ModalBody>
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>

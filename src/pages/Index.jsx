@@ -15,6 +15,12 @@ const Index = () => {
       setChatResponse("It sounds like you are feeling stressed. Taking a short break might help.");
     } else if (input.toLowerCase().includes("help")) {
       setChatResponse("How can I assist you further?");
+    } else if (input.toLowerCase().includes("schedule")) {
+      setChatResponse("Your next meeting is at 3 PM today.");
+    } else if (input.toLowerCase().includes("weather")) {
+      setChatResponse("Today's weather is sunny with a high of 75°F.");
+    } else if (input.toLowerCase().includes("news")) {
+      setChatResponse("Today's headline: 'Major breakthrough in renewable energy sources announced.'");
     } else {
       setChatResponse("I am here to help. Could you please specify your issue?");
     }

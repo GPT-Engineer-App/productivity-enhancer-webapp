@@ -1,9 +1,10 @@
-import { Box, Button, Container, Flex, Heading, IconButton, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack, useColorMode } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, Heading, IconButton, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack, useColorMode, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, useDisclosure } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { FaMoon, FaSun, FaWater, FaRunning, FaEye, FaWind, FaVolumeUp, FaLightbulb, FaBrain, FaBolt, FaBookOpen, FaRegLightbulb, FaRegSmileBeam, FaRegCalendarPlus, FaRegListAlt } from "react-icons/fa";
 
 const Index = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Container maxW="container.xl" p={4}>
@@ -114,6 +115,10 @@ const Index = () => {
                 <Text>Energy</Text>
                 <IconButton aria-label="Energy" icon={<FaSun />} size="lg" />
               </VStack>
+              <VStack>
+                <Text>AI Assistant</Text>
+                <IconButton aria-label="AI Assistant" icon={<FaBrain />} size="lg" onClick={onOpen} />
+              </VStack>
             </Flex>
           </VStack>
         </Flex>
@@ -138,6 +143,21 @@ const Index = () => {
           </Box>
         </Flex>
       </VStack>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>AI Assistant Chat</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Text>Welcome to AI Assistant. How can I help you today?</Text>
+          </ModalBody>
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
+              Close
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </Container>
   );
 };

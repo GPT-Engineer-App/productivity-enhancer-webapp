@@ -1,12 +1,10 @@
 import { Box, Button, Container, FormControl, FormLabel, Input, VStack, useToast } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const toast = useToast();
-  const navigate = useNavigate();
 
   const login = () => {
     if (email === "berk" && password === "berk1234") {
@@ -17,7 +15,6 @@ const Login = () => {
         duration: 9000,
         isClosable: true,
       });
-      navigate("/");
     } else {
       toast({
         title: "Login Failed",

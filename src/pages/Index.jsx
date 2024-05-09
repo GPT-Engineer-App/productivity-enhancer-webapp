@@ -175,7 +175,15 @@ const Index = () => {
             </VStack>
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
+            <Button
+              colorScheme="blue"
+              mr={3}
+              onClick={() => {
+                onClose();
+                setChatResponse("Welcome to AI Assistant. How can I help you today?");
+                setUserInput("");
+              }}
+            >
               Close
             </Button>
           </ModalFooter>

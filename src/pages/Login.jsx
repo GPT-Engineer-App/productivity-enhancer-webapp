@@ -7,13 +7,25 @@ const Login = () => {
         <VStack spacing={4}>
           <FormControl isRequired>
             <FormLabel>Email</FormLabel>
-            <Input type="email" placeholder="Enter your email" />
+            <Input id="email" type="email" placeholder="Enter your email" />
           </FormControl>
           <FormControl isRequired>
             <FormLabel>Password</FormLabel>
-            <Input type="password" placeholder="Enter your password" />
+            <Input id="password" type="password" placeholder="Enter your password" />
           </FormControl>
-          <Button colorScheme="blue" w="full">
+          <Button
+            colorScheme="blue"
+            w="full"
+            onClick={() => {
+              const email = document.getElementById("email").value;
+              const password = document.getElementById("password").value;
+              if (email === "berk" && password === "berk1234") {
+                window.location.href = "/index";
+              } else {
+                alert("Invalid credentials");
+              }
+            }}
+          >
             Log In
           </Button>
         </VStack>

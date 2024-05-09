@@ -12,14 +12,7 @@ const Index = () => {
           <Heading as="h1" size="xl">
             Welcome to Your Personal Development Hub
           </Heading>
-          <Box>
-            <Button as={Link} to="/login" colorScheme="teal" variant="outline" mr={2}>
-              Log In
-            </Button>
-            <Button as={Link} to="/signup" colorScheme="teal">
-              Sign Up
-            </Button>
-          </Box>
+
           <IconButton aria-label="Toggle color mode" icon={colorMode === "light" ? <FaMoon /> : <FaSun />} onClick={toggleColorMode} />
         </Flex>
         <Text fontSize="lg" textAlign="center">

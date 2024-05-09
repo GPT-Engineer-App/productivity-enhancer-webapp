@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { Box, Button, Container, Flex, Heading, IconButton, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack, useColorMode, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, useDisclosure, Input } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { FaMoon, FaSun, FaWater, FaRunning, FaEye, FaWind, FaVolumeUp, FaLightbulb, FaBrain, FaBolt, FaBookOpen, FaRegLightbulb, FaRegSmileBeam, FaRegCalendarPlus, FaRegListAlt } from "react-icons/fa";
@@ -157,20 +157,13 @@ const Index = () => {
           </Box>
         </Flex>
       </VStack>
-      <Modal
-        isOpen={isOpen}
-        onClose={() => {
-          onClose();
-          setUserInput("");
-          setChatResponse("Welcome to AI Assistant. How can I help you today?");
-        }}
-      >
+      <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>AI Assistant Chat</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text as="i">{chatResponse} (speaking...)</Text>
+            <Text>{chatResponse}</Text>
             <Input placeholder="Type your message here..." value={userInput} onChange={(e) => handleUserInput(e.target.value)} mt={4} />
           </ModalBody>
           <ModalFooter>

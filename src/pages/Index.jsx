@@ -1,19 +1,8 @@
-import { Box, Button, Container, Flex, Heading, IconButton, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack, useColorMode, Input, Select, FormControl, FormLabel } from "@chakra-ui/react";
-import { FaMoon, FaSun, FaWater, FaRunning, FaEye, FaWind, FaVolumeUp, FaLightbulb, FaBrain, FaBolt, FaBookOpen, FaRegLightbulb, FaRegSmileBeam, FaRegCalendarPlus, FaRegListAlt, FaBook, FaLink, FaVideo, FaBlog, FaHeadphones } from "react-icons/fa";
-import React from "react";
+import { Box, Button, Container, Flex, Heading, IconButton, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack, useColorMode } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { FaMoon, FaSun, FaWater, FaRunning, FaEye, FaWind, FaVolumeUp, FaLightbulb, FaBrain, FaBolt, FaBookOpen, FaRegLightbulb, FaRegSmileBeam, FaRegCalendarPlus, FaRegListAlt } from "react-icons/fa";
 
 const Index = () => {
-  const [learningItems, setLearningItems] = React.useState([]);
-  const addLearningItem = (event) => {
-    event.preventDefault();
-    const title = event.target.elements.title.value;
-    const type = event.target.elements.type.value;
-    const link = event.target.elements.link.value;
-    const newItem = { title, type, link };
-    setLearningItems([...learningItems, newItem]);
-    event.target.reset();
-  };
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
@@ -135,52 +124,7 @@ const Index = () => {
           </Box>
           <Box flex="1" p={4} borderWidth="1px" borderRadius="lg" ml={{ md: 4 }}>
             <Heading size="md">Learning Management</Heading>
-            <form onSubmit={addLearningItem}>
-              <VStack spacing={3}>
-                <FormControl isRequired>
-                  <FormLabel>Title</FormLabel>
-                  <Input id="title" type="text" placeholder="Enter title" />
-                </FormControl>
-                <FormControl isRequired>
-                  <FormLabel>Type</FormLabel>
-                  <Select id="type" placeholder="Select type">
-                    <option value="FaBook">
-                      <FaBook />
-                    </option>
-                    <option value="FaLink">
-                      <FaLink />
-                    </option>
-                    <option value="FaVideo">
-                      <FaVideo />
-                    </option>
-                    <option value="FaBlog">
-                      <FaBlog />
-                    </option>
-                    <option value="FaHeadphones">
-                      <FaHeadphones />
-                    </option>
-                  </Select>
-                </FormControl>
-                <FormControl isRequired>
-                  <FormLabel>Link</FormLabel>
-                  <Input id="link" type="url" placeholder="Enter URL" />
-                </FormControl>
-                <Button type="submit" colorScheme="blue">
-                  Add Item
-                </Button>
-              </VStack>
-            </form>
-            <VStack spacing={4} mt={4}>
-              {learningItems.map((item, index) => (
-                <Flex key={index} align="center">
-                  <Box as={item.type} size="20px" mr={2} />
-                  <Text>{item.title}</Text>
-                  <a href={item.link} target="_blank" rel="noopener noreferrer">
-                    Link
-                  </a>
-                </Flex>
-              ))}
-            </VStack>
+            <Text mt={2}>Courses and materials for development.</Text>
           </Box>
           <Box flex="1" p={4} borderWidth="1px" borderRadius="lg" ml={{ md: 4 }}>
             <Heading size="md">Health Tips</Heading>

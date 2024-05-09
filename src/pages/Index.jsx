@@ -1,10 +1,24 @@
-import { Box, Button, Container, Flex, Heading, IconButton, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack, useColorMode, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, useDisclosure } from "@chakra-ui/react";
+import React from 'react';
+import { Box, Button, Container, Flex, Heading, IconButton, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack, useColorMode, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, useDisclosure, Input } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { FaMoon, FaSun, FaWater, FaRunning, FaEye, FaWind, FaVolumeUp, FaLightbulb, FaBrain, FaBolt, FaBookOpen, FaRegLightbulb, FaRegSmileBeam, FaRegCalendarPlus, FaRegListAlt } from "react-icons/fa";
 
 const Index = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [userInput, setUserInput] = React.useState("");
+  const [chatResponse, setChatResponse] = React.useState("Welcome to AI Assistant. How can I help you today?");
+
+  const handleUserInput = (input) => {
+    setUserInput(input);
+    if (input.toLowerCase().includes("stress")) {
+      setChatResponse("It sounds like you are feeling stressed. Taking a short break might help.");
+    } else if (input.toLowerCase().includes("help")) {
+      setChatResponse("How can I assist you further?");
+    } else {
+      setChatResponse("I am here to help. Could you please specify your issue?");
+    }
+  };
 
   return (
     <Container maxW="container.xl" p={4}>
@@ -149,7 +163,8 @@ const Index = () => {
           <ModalHeader>AI Assistant Chat</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text>Welcome to AI Assistant. How can I help you today?</Text>
+            <Text>{chatResponse}</Text>
+            <Input placeholder="Type your message here..." value={userInput} onChange={(e) => handleUserInput(e.target.value)} mt={4} />
           </ModalBody>
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>

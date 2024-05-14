@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Button, Container, Flex, Heading, IconButton, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack, useColorMode, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, useDisclosure, Input } from "@chakra-ui/react";
+import MorningRoutine from "../components/MorningRoutine";
 import { Link } from "react-router-dom";
 import { FaMoon, FaSun, FaWater, FaRunning, FaEye, FaWind, FaVolumeUp, FaLightbulb, FaBrain, FaBolt, FaBookOpen, FaRegLightbulb, FaRegSmileBeam, FaRegCalendarPlus, FaRegListAlt } from "react-icons/fa";
 
@@ -28,7 +29,8 @@ const Index = () => {
 
   return (
     <Container maxW="container.xl" p={4}>
-      <VStack spacing={8}>
+      <MorningRoutine />
+      <VStack spacing={8} mt={4}>
         <Flex justifyContent="space-between" alignItems="center" w="full">
           <Heading as="h1" size="xl">
             Welcome to Your Personal Development Hub

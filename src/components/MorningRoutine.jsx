@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Heading, Text, VStack, RadioGroup, Radio, Stack } from "@chakra-ui/react";
+import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 
 const MorningRoutine = () => {
   return (

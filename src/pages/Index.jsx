@@ -29,12 +29,12 @@ const Index = () => {
 
   return (
     <Container maxW="container.xl" p={4}>
+      <MorningRoutine />
       <VStack spacing={8} mt={4}>
         <Flex justifyContent="space-between" alignItems="center" w="full">
           <Heading as="h1" size="xl">
             Welcome to Your Personal Development Hub
           </Heading>
-          <IconButton aria-label="Toggle color mode" icon={colorMode === "light" ? <FaMoon /> : <FaSun />} onClick={toggleColorMode} />
 
           <IconButton aria-label="Toggle color mode" icon={colorMode === "light" ? <FaMoon /> : <FaSun />} onClick={toggleColorMode} />
         </Flex>

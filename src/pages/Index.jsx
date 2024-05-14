@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Button, Container, Flex, Heading, IconButton, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack, useColorMode, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, useDisclosure, Input } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { FaMoon, FaSun, FaWater, FaRunning, FaEye, FaWind, FaVolumeUp, FaLightbulb, FaBrain, FaBolt, FaBookOpen, FaRegLightbulb, FaRegSmileBeam, FaRegCalendarPlus, FaRegListAlt } from "react-icons/fa";
+import MorningRoutine from "../components/MorningRoutine";
 
 const Index = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -91,6 +92,7 @@ const Index = () => {
               </TabPanels>
             </Tabs>
           </VStack>
+          <MorningRoutine />
           <VStack flex="2" borderWidth="1px" borderRadius="lg" p={4} spacing={4} ml={{ md: 4 }}>
             <Heading size="md">MODS</Heading>
             <Flex w="full">

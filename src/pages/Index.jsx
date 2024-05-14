@@ -30,6 +30,7 @@ const Index = () => {
   return (
     <Container maxW="container.xl" p={4}>
       <VStack spacing={8}>
+        <MorningRoutine />
         <Flex justifyContent="space-between" alignItems="center" w="full">
           <Heading as="h1" size="xl">
             Welcome to Your Personal Development Hub

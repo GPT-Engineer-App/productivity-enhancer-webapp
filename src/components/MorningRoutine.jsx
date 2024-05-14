@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Heading, VStack, Radio, RadioGroup, Stack, Text, Button, Collapse } from "@chakra-ui/react";
+import { Box, Heading, VStack, Radio, RadioGroup, Stack, Text, Button, Collapse, Flex } from "@chakra-ui/react";
+import { FaRunning, FaWater, FaWind, FaVolumeUp, FaMoon, FaRegSmileBeam } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const MorningRoutine = () => {
@@ -10,11 +11,43 @@ const MorningRoutine = () => {
     externalFactors: "",
   });
 
+  const [showSuggestions, setShowSuggestions] = React.useState(false);
+
   const handleAnswerChange = (question, value) => {
     setAnswers((prevAnswers) => ({
       ...prevAnswers,
       [question]: value,
     }));
+  };
+
+  const suggestions = {
+    low: [
+      { text: "Take a short walk", icon: <FaRunning /> },
+      { text: "Drink a glass of water", icon: <FaWater /> },
+    ],
+    medium: [
+      { text: "Practice deep breathing", icon: <FaWind /> },
+      { text: "Listen to calming music", icon: <FaVolumeUp /> },
+    ],
+    high: [
+      { text: "Take a break and relax", icon: <FaMoon /> },
+      { text: "Talk to a friend or family member", icon: <FaRegSmileBeam /> },
+    ],
+  };
+
+  const getSuggestions = () => {
+    const values = Object.values(answers).map(Number);
+    const count1 = values.filter((v) => v === 1).length;
+    const count2 = values.filter((v) => v === 2).length;
+    const count3 = values.filter((v) => v === 3).length;
+
+    if (count3 >= 2 || (count2 >= 2 && count3 >= 1)) {
+      return suggestions.high;
+    } else if (count2 >= 2 || (count1 >= 2 && count2 >= 2)) {
+      return suggestions.medium;
+    } else {
+      return suggestions.low;
+    }
   };
 
   return (
@@ -79,6 +112,19 @@ const MorningRoutine = () => {
           })()}
         </Text>
       </Box>
+      {showSuggestions && (
+        <Box mt={4} w="full">
+          <Heading size="md">Suggestions</Heading>
+          <VStack spacing={4} align="start">
+            {getSuggestions().map((suggestion, index) => (
+              <Flex key={index} align="center">
+                <Box mr={2}>{suggestion.icon}</Box>
+                <Text>{suggestion.text}</Text>
+              </Flex>
+            ))}
+          </VStack>
+        </Box>
+      )}
     </VStack>
   );
 };

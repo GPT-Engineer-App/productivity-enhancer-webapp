@@ -34,6 +34,9 @@ const Index = () => {
           <Heading as="h1" size="xl">
             Welcome to Your Personal Development Hub
           </Heading>
+          <Text fontSize="lg" fontStyle="italic" mt={2}>
+            "The only way to do great work is to love what you do." - Steve Jobs
+          </Text>
 
           <IconButton aria-label="Toggle color mode" icon={colorMode === "light" ? <FaMoon /> : <FaSun />} onClick={toggleColorMode} />
         </Flex>
